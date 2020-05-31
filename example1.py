@@ -18,7 +18,7 @@ data = iris.data[:,(2,3)]
 labels = iris.target
 
 plt.figure(figsize=(13,6))
-plt.scatter(data[:,0],data[:,1],c=labels)
+plt.scatter(data[:,2],data[:,3],c=labels)
 plt.show()
 
 y = (iris.target == 2).astype(np.int)
@@ -30,4 +30,4 @@ y1_pred = test_perceptron.predict([[5.1,2]])
 print('Prediction 1:',y1_pred)
 
 y2_pred = test_perceptron.predict([[1.4,0.2]])
-print('Prediction 1:',y2_pred)
+print('Prediction 2:',y2_pred)
