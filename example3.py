@@ -18,7 +18,7 @@ from keras.datasets import boston_housing
 model1 = Sequential()
 model1.add(Dense(13,input_dim = 13, kernel_initializer='normal', activation = 'relu'))
 model1.add(Dense(6, kernel_initializer='normal', activation = 'relu'))
-model1.add(Dense(4, kernel_initializer='normal', activation = 'relu'))
+model1.add(Dense(6, kernel_initializer='normal', activation = 'relu'))
 model1.add(Dense(1, kernel_initializer='normal'))
 
 model1.compile(loss='mse', optimizer = 'adam', metrics=['mean_absolute_percentage_error'])
@@ -34,7 +34,7 @@ y_val = y_train[300:,]
 #model1.fit(x_train,y_train, batch_size=32, epochs=100, validation_data=(x_val, y_val))
 
 
-history1 = model1.fit(x_train,y_train, batch_size=32, epochs = 200, validation_data=(x_val, y_val), verbose = 0)
+history1 = model1.fit(x_train,y_train, batch_size=64, epochs = 300, validation_data=(x_val, y_val), verbose = 0)
 import matplotlib.pyplot as plt
 # plt.plot(history1.history['mean_absolute_percentage_error'])
 # plt.plot(history1.history['val_mean_absolute_percentage_error'])
@@ -44,4 +44,4 @@ plt.plot(history1.history['val_loss'])
 
 
 result = model1.evaluate(x_test, y_test)
-print(results)
+print(result)
