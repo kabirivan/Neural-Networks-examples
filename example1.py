@@ -20,4 +20,14 @@ labels = iris.target
 plt.figure(figsize=(13,6))
 plt.scatter(data[:,0],data[:,1],c=labels)
 plt.show()
-adfsa
+
+y = (iris.target == 2).astype(np.int)
+test_perceptron = Perceptron()
+test_perceptron.fit(data, y)
+
+
+y1_pred = test_perceptron.predict([[5.1,2]])
+print('Prediction 1:',y1_pred)
+
+y2_pred = test_perceptron.predict([[1.4,0.2]])
+print('Prediction 1:',y2_pred)
